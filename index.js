@@ -25,3 +25,20 @@ const promise3 = new Promise((resolve, reject) => setTimeout(resolve, 1000, 'del
 const promise4 = fetch('https://jsonplaceholder.typicode.com/users/1').then(res => res.json());
 
 Promise.all([promise1, promise2, promise3, promise4]).then(values => console.log(values))
+
+// async await
+
+// async function init(){
+//     await createPosts({'title': 'p3', 'body': 'This is three'})
+//     getPosts();
+// }
+
+// init();
+
+async function fetchUsers(){
+    const res = await fetch('https://jsonplaceholder.typicode.com/users/1');
+    const data = await res.json();
+    console.log(data);
+}
+fetchUsers();
+
